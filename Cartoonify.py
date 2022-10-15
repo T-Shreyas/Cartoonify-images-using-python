@@ -19,3 +19,10 @@ img_color = cv2.bilateralFilter(img_color, 9, 9, 7)
 for _ in range(numDownSamples):
 img_color = cv2.pyrUp(img_color)
 
+img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2GRAY)
+img_blur = cv2.medianBlur(img_gray, 3)
+
+
+img_edge = cv2.adaptiveThreshold(img_blur, 255,
+		cv2.ADAPTIVE_THRESH_MEAN_C,
+		cv2.THRESH_BINARY, 9, 2)
