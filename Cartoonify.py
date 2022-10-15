@@ -35,3 +35,11 @@ cv2.imwrite("edge.png",img_edge)
 return cv2.bitwise_and(img_color, img_edge)
 
 tmp_canvas = Cartoonizer()
+
+file_name = "Screenshot.png" #File_name will come here
+res = tmp_canvas.render(file_name)
+
+cv2.imwrite("Cartoon version.jpg", res)
+cv2.imshow("Cartoon version", res)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
