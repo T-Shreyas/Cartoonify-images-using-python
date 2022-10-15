@@ -16,7 +16,6 @@ img_color = cv2.pyrDown(img_color)
 for _ in range(numBilateralFilters):
 img_color = cv2.bilateralFilter(img_color, 9, 9, 7)
 
-
 for _ in range(numDownSamples):
 img_color = cv2.pyrUp(img_color)
 
